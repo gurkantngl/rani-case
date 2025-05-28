@@ -1,0 +1,471 @@
+{% extends "base.html" %}
+
+{% block title %}Model Test - Rani AI Müşteri Hizmetleri{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Page Header -->
+    <div class="col-12 mb-4">
+        <div class="card bg-gradient text-white" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
+            <div class="card-body text-center py-4">
+                <i class="fas fa-flask fa-3x mb-3"></i>
+                <h2 class="mb-2">Model Test Laboratuvarı</h2>
+                <p class="mb-0">Farklı AI yaklaşımlarını karşılaştırın ve test edin</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Input -->
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-edit"></i> Test Sorusu Girin
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <textarea 
+                            class="form-control" 
+                            id="testQuestion" 
+                            placeholder="Test etmek istediğiniz müşteri sorusunu yazın..."
+                            rows="3"></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-lg" onclick="runAllTests()">
+                                <i class="fas fa-play"></i> Tüm Modelleri Test Et
+                            </button>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="includeMetrics" checked>
+                                <label class="form-check-label" for="includeMetrics">
+                                    Detaylı metrikler göster
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Test Buttons -->
+                <div class="mt-3">
+                    <h6>Hızlı Test Örnekleri:</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="setTestQuestion('Siparişim ne zaman gelir?')">
+                            📦 Sipariş Takip
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="setTestQuestion('Bu ürünü iade etmek istiyorum, nasıl yapabilirim?')">
+                            🔄 İade Süreci
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="setTestQuestion('TV ünitesinin ölçüleri ve fiyatı nedir?')">
+                            📏 Ürün Bilgisi
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="setTestQuestion('Kargo adresimi değiştirebilir miyim?')">
+                            🚚 Kargo İşlemleri
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="setTestQuestion('Montaj hizmeti veriyor musunuz? Fiyatı ne kadar?')">
+                            🔧 Genel Destek
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Results -->
+    <div id="testResults" style="display: none;">
+        <!-- RAG Model -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-info">
+                <div class="card-header bg-info text-white">
+                    <h6 class="mb-0">
+                        <i class="fas fa-database"></i> RAG Sistemi
+                        <span class="badge bg-light text-dark float-end" id="ragScore">-</span>
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div id="ragResult">
+                        <div class="text-center">
+                            <div class="loading"></div>
+                            <p class="text-muted">Test ediliyor...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <i class="fas fa-clock"></i> Süre: <span id="ragTime">-</span>ms
+                        <br>
+                        <i class="fas fa-search"></i> Knowledge Base Araması
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prompt Engineering -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-success">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0">
+                        <i class="fas fa-cogs"></i> Prompt Engineering
+                        <span class="badge bg-light text-dark float-end" id="promptScore">-</span>
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div id="promptResult">
+                        <div class="text-center">
+                            <div class="loading"></div>
+                            <p class="text-muted">Test ediliyor...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <i class="fas fa-clock"></i> Süre: <span id="promptTime">-</span>ms
+                        <br>
+                        <i class="fas fa-brain"></i> Senaryo: <span id="promptScenario">-</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hybrid -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-warning">
+                <div class="card-header bg-warning text-white">
+                    <h6 class="mb-0">
+                        <i class="fas fa-sync-alt"></i> Hibrit Mod
+                        <span class="badge bg-light text-dark float-end" id="hybridScore">-</span>
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div id="hybridResult">
+                        <div class="text-center">
+                            <div class="loading"></div>
+                            <p class="text-muted">Test ediliyor...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <i class="fas fa-clock"></i> Süre: <span id="hybridTime">-</span>ms
+                        <br>
+                        <i class="fas fa-layer-group"></i> Metod: <span id="hybridMethod">-</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Chart -->
+    <div id="comparisonSection" class="col-12 mb-4" style="display: none;">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-bar"></i> Karşılaştırma Analizi
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <canvas id="performanceChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Sonuç Özeti:</h6>
+                        <div id="summaryResults">
+                            <!-- Dynamic content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test History -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-history"></i> Test Geçmişi
+                    <button class="btn btn-outline-danger btn-sm float-end" onclick="clearHistory()">
+                        <i class="fas fa-trash"></i> Temizle
+                    </button>
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="testHistory">
+                    <p class="text-muted text-center">Henüz test yapılmadı. Yukarıdan bir test başlatın.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let testHistory = [];
+let performanceChart = null;
+
+function setTestQuestion(question) {
+    document.getElementById('testQuestion').value = question;
+}
+
+function runAllTests() {
+    const question = document.getElementById('testQuestion').value.trim();
+    
+    if (!question) {
+        alert('Lütfen bir test sorusu girin!');
+        return;
+    }
+
+    // Show results section
+    document.getElementById('testResults').style.display = 'flex';
+    document.getElementById('comparisonSection').style.display = 'block';
+
+    // Reset results
+    resetResults();
+
+    // Run tests
+    const approaches = ['rag', 'prompt', 'hybrid'];
+    const promises = approaches.map(approach => runSingleTest(question, approach));
+
+    Promise.allSettled(promises).then(results => {
+        updateComparison();
+        addToHistory(question, results);
+    });
+}
+
+function resetResults() {
+    const resultContainers = ['ragResult', 'promptResult', 'hybridResult'];
+    resultContainers.forEach(id => {
+        document.getElementById(id).innerHTML = `
+            <div class="text-center">
+                <div class="loading"></div>
+                <p class="text-muted">Test ediliyor...</p>
+            </div>
+        `;
+    });
+
+    // Reset scores and times
+    ['rag', 'prompt', 'hybrid'].forEach(type => {
+        document.getElementById(type + 'Score').textContent = '-';
+        document.getElementById(type + 'Time').textContent = '-';
+    });
+}
+
+function runSingleTest(question, approach) {
+    const startTime = Date.now();
+    
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: '/api/ask',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                message: question,
+                approach: approach
+            }),
+            success: function(response) {
+                const responseTime = Date.now() - startTime;
+                displayResult(approach, response, responseTime);
+                resolve({ approach, response, responseTime });
+            },
+            error: function(xhr, status, error) {
+                const responseTime = Date.now() - startTime;
+                displayError(approach, error);
+                reject({ approach, error, responseTime });
+            }
+        });
+    });
+}
+
+function displayResult(approach, response, responseTime) {
+    const confidenceClass = response.confidence > 0.7 ? 'text-success' : 
+                          response.confidence > 0.4 ? 'text-warning' : 'text-danger';
+    
+    // Update result content
+    document.getElementById(approach + 'Result').innerHTML = `
+        <div class="result-content">
+            <p class="mb-2">${response.answer}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">${response.method || approach.toUpperCase()}</small>
+                <span class="badge bg-primary">
+                    ${Math.round(response.confidence * 100)}% güven
+                </span>
+            </div>
+        </div>
+    `;
+
+    // Update scores and metadata
+    document.getElementById(approach + 'Score').textContent = (response.confidence * 100).toFixed(0) + '%';
+    document.getElementById(approach + 'Time').textContent = responseTime;
+
+    // Update specific metadata
+    if (approach === 'prompt' && response.scenario) {
+        document.getElementById('promptScenario').textContent = response.scenario;
+    }
+    if (approach === 'hybrid' && response.method) {
+        document.getElementById('hybridMethod').textContent = response.method;
+    }
+}
+
+function displayError(approach, error) {
+    document.getElementById(approach + 'Result').innerHTML = `
+        <div class="alert alert-danger">
+            <i class="fas fa-exclamation-triangle"></i>
+            Test başarısız: ${error}
+        </div>
+    `;
+}
+
+function updateComparison() {
+    const ragScore = parseFloat(document.getElementById('ragScore').textContent) || 0;
+    const promptScore = parseFloat(document.getElementById('promptScore').textContent) || 0;
+    const hybridScore = parseFloat(document.getElementById('hybridScore').textContent) || 0;
+
+    const ragTime = parseInt(document.getElementById('ragTime').textContent) || 0;
+    const promptTime = parseInt(document.getElementById('promptTime').textContent) || 0;
+    const hybridTime = parseInt(document.getElementById('hybridTime').textContent) || 0;
+
+    // Update chart
+    updatePerformanceChart([ragScore, promptScore, hybridScore]);
+
+    // Update summary
+    const winner = ragScore > promptScore && ragScore > hybridScore ? 'RAG Sistemi' :
+                   promptScore > hybridScore ? 'Prompt Engineering' : 'Hibrit Mod';
+
+    const fastestApproach = Math.min(ragTime, promptTime, hybridTime) === ragTime ? 'RAG' :
+                           Math.min(promptTime, hybridTime) === promptTime ? 'Prompt' : 'Hibrit';
+
+    document.getElementById('summaryResults').innerHTML = `
+        <div class="mb-3">
+            <h6 class="text-success">🏆 En Yüksek Güven Skoru:</h6>
+            <p class="mb-1">${winner}</p>
+        </div>
+        <div class="mb-3">
+            <h6 class="text-info">⚡ En Hızlı Yanıt:</h6>
+            <p class="mb-1">${fastestApproach} (${Math.min(ragTime, promptTime, hybridTime)}ms)</p>
+        </div>
+        <div class="mb-3">
+            <h6 class="text-warning">📊 Ortalama Performans:</h6>
+            <p class="mb-1">${((ragScore + promptScore + hybridScore) / 3).toFixed(1)}%</p>
+        </div>
+    `;
+}
+
+function updatePerformanceChart(scores) {
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+    
+    if (performanceChart) {
+        performanceChart.destroy();
+    }
+
+    performanceChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['RAG Sistemi', 'Prompt Engineering', 'Hibrit Mod'],
+            datasets: [{
+                label: 'Güven Skoru (%)',
+                data: scores,
+                backgroundColor: [
+                    'rgba(23, 162, 184, 0.8)',
+                    'rgba(40, 167, 69, 0.8)',
+                    'rgba(255, 193, 7, 0.8)'
+                ],
+                borderColor: [
+                    'rgb(23, 162, 184)',
+                    'rgb(40, 167, 69)',
+                    'rgb(255, 193, 7)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Model Performans Karşılaştırması'
+                }
+            }
+        }
+    });
+}
+
+function addToHistory(question, results) {
+    const timestamp = new Date().toLocaleString('tr-TR');
+    
+    testHistory.unshift({
+        question,
+        results,
+        timestamp
+    });
+
+    // Keep only last 10 tests
+    if (testHistory.length > 10) {
+        testHistory = testHistory.slice(0, 10);
+    }
+
+    updateHistoryDisplay();
+}
+
+function updateHistoryDisplay() {
+    const historyContainer = document.getElementById('testHistory');
+    
+    if (testHistory.length === 0) {
+        historyContainer.innerHTML = '<p class="text-muted text-center">Henüz test yapılmadı.</p>';
+        return;
+    }
+
+    let historyHTML = '<div class="table-responsive"><table class="table table-striped"><thead><tr><th>Zaman</th><th>Soru</th><th>En İyi Sonuç</th></tr></thead><tbody>';
+    
+    testHistory.forEach(test => {
+        const bestResult = test.results.find(r => r.status === 'fulfilled' && r.value.response.confidence === Math.max(...test.results.filter(r => r.status === 'fulfilled').map(r => r.value.response.confidence)));
+        
+        historyHTML += `
+            <tr>
+                <td><small>${test.timestamp}</small></td>
+                <td>${test.question.substring(0, 50)}${test.question.length > 50 ? '...' : ''}</td>
+                <td>
+                    ${bestResult ? `
+                        <span class="badge bg-success">
+                            ${bestResult.value.approach.toUpperCase()} - ${Math.round(bestResult.value.response.confidence * 100)}%
+                        </span>
+                    ` : '<span class="badge bg-danger">Hata</span>'}
+                </td>
+            </tr>
+        `;
+    });
+    
+    historyHTML += '</tbody></table></div>';
+    historyContainer.innerHTML = historyHTML;
+}
+
+function clearHistory() {
+    if (confirm('Test geçmişini temizlemek istediğinizden emin misiniz?')) {
+        testHistory = [];
+        updateHistoryDisplay();
+    }
+}
+
+// Auto-focus on question input
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('testQuestion').focus();
+});
+</script>
+{% endblock %} 

@@ -1,0 +1,282 @@
+# Rani Mobilya AI Müşteri Hizmetleri - Git Ignore
+# ================================================
+
+# Python
+# -------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+.env
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs
+# ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Node.js & React
+# ---------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Build outputs
+frontend/build/
+frontend/dist/
+*.tgz
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# AI Models & Datasets
+# --------------------
+# Eğitilmiş modeller (büyük dosyalar)
+*.pkl
+*.joblib
+*.model
+*.h5
+*.pb
+*.onnx
+*.bin
+
+# Dataset dosyaları (büyük CSV'ler)
+datasets/*.csv
+datasets/*.json
+datasets/*.xlsx
+datasets/*.parquet
+
+# İşlenmiş veri dosyaları
+processed_datasets/
+processed_datasets_v2/
+processed_chat_data.csv
+conversation_pairs.csv
+
+# Model checkpoint'leri
+checkpoints/
+models/
+saved_models/
+weights/
+
+# TensorFlow/PyTorch
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+
+# Vektör veritabanları
+*.index
+*.faiss
+chromadb/
+vector_store/
+
+# Log Dosyaları
+# -------------
+*.log
+logs/
+data_preprocessing*.log
+rag_system*.log
+training*.log
+
+# Geçici dosyalar
+# ---------------
+*.tmp
+*.temp
+*.bak
+*.backup
+temp/
+tmp/
+
+# Sistem dosyaları
+# ----------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Proje spesifik
+# --------------
+# API anahtarları ve konfigürasyon
+config.json
+secrets.json
+api_keys.txt
+
+# Test dosyaları
+test_output/
+test_results/
+screenshots/
+
+# Backup dosyaları
+*.backup
+*.bak
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache directories
+.cache/
+cache/
+__pycache__/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Profiling data
+.prof
+
+# MyPy cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+.idea/
+
+# Local development
+local_settings.py
+local_config.py
+
+# Documentation builds
+docs/_build/
+site/
+
+# macOS
+*.DS_Store
+
+# FastAPI/Uvicorn
+.pytest_cache/
+
+# React/Frontend specific
+frontend/.eslintcache
+frontend/build/
+frontend/public/hot/
+frontend/storage/*.key
+
+# Package lock files (keep package.json, ignore locks for flexibility)
+# frontend/package-lock.json  # Uncomment if you want to ignore lock files
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix 

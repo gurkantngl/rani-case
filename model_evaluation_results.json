@@ -1,0 +1,506 @@
+[
+  {
+    "approach": "Prompt Engineering",
+    "individual_scores": {
+      "response_time": 1.0,
+      "accuracy": 0.8584548037473576,
+      "customer_satisfaction": 0.925811988541261,
+      "consistency": 0.8674635655787757,
+      "cost_efficiency": 0.9
+    },
+    "final_score": 0.9091089730963389,
+    "raw_metrics": {
+      "response_times": [
+        1.3805799528866929,
+        0.7096971431319266,
+        1.0291388626670726,
+        0.7725984833575041,
+        0.9803424528501002,
+        0.5385156144046372,
+        0.7797339635610978,
+        0.8060692277619683,
+        1.3835495802894675,
+        0.6029442335209512
+      ],
+      "accuracy_scores": [
+        0.9494753889394244,
+        0.8912066601544038,
+        0.9144139433936105,
+        0.8356143308417229,
+        0.8702299169059758,
+        0.8328714730768709,
+        0.7737605198819735,
+        0.858797593729656,
+        0.8550488102982681,
+        0.803129400251671
+      ],
+      "satisfaction_scores": [
+        0.7656919060864539,
+        0.8918868053868655,
+        0.7966935188087885,
+        0.8665239341821781,
+        1.0,
+        1.0,
+        0.9373237209483234,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "consistency_scores": [
+        0.9318393066680899,
+        0.9171859517568101,
+        0.8474502310848516,
+        0.9252985397531378,
+        0.7579097546708607,
+        0.8370293281338425,
+        0.8922032945451019,
+        0.8737284897366864,
+        0.8909713115432523,
+        0.8010194478951237
+      ],
+      "prompts": [
+        {
+          "scenario": "siparis_takip",
+          "system_prompt": "Sen Rani Mobilya'nın sipariş takip uzmanı müşteri hizmetleri temsilcisisin.\nSipariş durumu sorularında:\n- Sipariş numarasını doğrula\n- Mevcut durumu açıkla\n- Sonraki adımları belirt\n- Tahmini zaman ver",
+          "user_prompt": "Müşteri: Merhaba, siparişim ne zaman gelir?\nSipariş No: Belirtilmedi\nDurum: Sorgulanıyor",
+          "examples": [
+            {
+              "input": "Siparişim nerede?",
+              "output": "Sipariş durumunuzu kontrol edebilmem için sipariş numaranızı paylaşabilir misiniz? Bu bilgi ile size güncel durumu ve tahmini teslimat tarihini verebilirim."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "iade_degisim",
+          "system_prompt": "Sen Rani Mobilya'nın iade süreçlerinde uzman müşteri hizmetleri temsilcisisin.\nİade/değişim işlemlerinde:\n- Ürünün durumunu sor\n- İade nedenini öğren\n- İade şartlarını açıkla\n- Süreç adımlarını detaylandır",
+          "user_prompt": "Müşteri: Bu ürünü iade etmek istiyorum\nÜrün: Belirtilmedi\nSipariş tarihi: Belirtilmedi",
+          "examples": [
+            {
+              "input": "Bu ürünü iade etmek istiyorum",
+              "output": "Tabii ki yardımcı olabilirim. İade sürecini başlatabilmek için ürünün hangi nedenle iade edilmek istendiğini öğrenebilir miyim? Ayrıca ürün orijinal ambalajında mı?"
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "urun_bilgisi",
+          "system_prompt": "Sen Rani Mobilya'nın ürün uzmanı müşteri hizmetleri temsilcisisin.\nÜrün sorularında:\n- Teknik özellikleri detaylandır\n- Ölçü bilgilerini ver\n- Renk/materyal seçeneklerini belirt\n- Montaj bilgisi ver",
+          "user_prompt": "Müşteri: TV ünitesinin ölçüleri nedir?\nÜrün kategori: Genel",
+          "examples": [
+            {
+              "input": "Bu ürünün ölçüleri nedir?",
+              "output": "Hangi ürünümüz hakkında bilgi almak istiyorsunuz? Ürün linkini veya adını paylaşırsanız size detaylı ölçü bilgilerini verebilirim."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "kargo_sorgulama",
+          "system_prompt": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\nKargo durumu sorularını yanıtlarken:\n- Nazik ve yardımcı ol\n- Sipariş numarasını sor\n- Kargo takip bilgisi ver\n- Tahmini teslimat süresi belirt",
+          "user_prompt": "Müşteri: Kargo durumumu öğrenebilir miyim?\nBağlam: İlk iletişim",
+          "examples": [
+            {
+              "input": "Siparişim ne zaman gelir?",
+              "output": "Merhaba! Sipariş durumunuzu kontrol edebilmem için sipariş numaranızı paylaşabilir misiniz? Bu şekilde size daha detaylı bilgi verebilirim."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "genel_destek",
+          "system_prompt": "Sen Rani Mobilya'nın deneyimli müşteri hizmetleri temsilcisisin.\nGenel müşteri hizmetlerinde:\n- Sıcak ve samimi ol\n- Sorunları dinle\n- Çözüm odaklı yaklaş\n- Gerekirse ilgili departmana yönlendir",
+          "user_prompt": "Müşteri: Yardım istiyorum\nKanal: Whatsapp\nSaat: 09:30",
+          "examples": [
+            {
+              "input": "Merhabalar, yardım istiyorum",
+              "output": "Merhaba! Rani Mobilya müşteri hizmetlerine hoş geldiniz. Size nasıl yardımcı olabilirim? Lütfen sorunuzu detaylı bir şekilde açıklayın."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "genel_destek",
+          "system_prompt": "Sen Rani Mobilya'nın deneyimli müşteri hizmetleri temsilcisisin.\nGenel müşteri hizmetlerinde:\n- Sıcak ve samimi ol\n- Sorunları dinle\n- Çözüm odaklı yaklaş\n- Gerekirse ilgili departmana yönlendir",
+          "user_prompt": "Müşteri: Fiyat bilgisi alabilir miyim?\nKanal: Whatsapp\nSaat: 09:30",
+          "examples": [
+            {
+              "input": "Merhabalar, yardım istiyorum",
+              "output": "Merhaba! Rani Mobilya müşteri hizmetlerine hoş geldiniz. Size nasıl yardımcı olabilirim? Lütfen sorunuzu detaylı bir şekilde açıklayın."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "genel_destek",
+          "system_prompt": "Sen Rani Mobilya'nın deneyimli müşteri hizmetleri temsilcisisin.\nGenel müşteri hizmetlerinde:\n- Sıcak ve samimi ol\n- Sorunları dinle\n- Çözüm odaklı yaklaş\n- Gerekirse ilgili departmana yönlendir",
+          "user_prompt": "Müşteri: Montaj yapıyor musunuz?\nKanal: Whatsapp\nSaat: 09:30",
+          "examples": [
+            {
+              "input": "Merhabalar, yardım istiyorum",
+              "output": "Merhaba! Rani Mobilya müşteri hizmetlerine hoş geldiniz. Size nasıl yardımcı olabilirim? Lütfen sorunuzu detaylı bir şekilde açıklayın."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "genel_destek",
+          "system_prompt": "Sen Rani Mobilya'nın deneyimli müşteri hizmetleri temsilcisisin.\nGenel müşteri hizmetlerinde:\n- Sıcak ve samimi ol\n- Sorunları dinle\n- Çözüm odaklı yaklaş\n- Gerekirse ilgili departmana yönlendir",
+          "user_prompt": "Müşteri: Garanti var mı?\nKanal: Whatsapp\nSaat: 09:30",
+          "examples": [
+            {
+              "input": "Merhabalar, yardım istiyorum",
+              "output": "Merhaba! Rani Mobilya müşteri hizmetlerine hoş geldiniz. Size nasıl yardımcı olabilirim? Lütfen sorunuzu detaylı bir şekilde açıklayın."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "genel_destek",
+          "system_prompt": "Sen Rani Mobilya'nın deneyimli müşteri hizmetleri temsilcisisin.\nGenel müşteri hizmetlerinde:\n- Sıcak ve samimi ol\n- Sorunları dinle\n- Çözüm odaklı yaklaş\n- Gerekirse ilgili departmana yönlendir",
+          "user_prompt": "Müşteri: İndirim var mı?\nKanal: Whatsapp\nSaat: 09:30",
+          "examples": [
+            {
+              "input": "Merhabalar, yardım istiyorum",
+              "output": "Merhaba! Rani Mobilya müşteri hizmetlerine hoş geldiniz. Size nasıl yardımcı olabilirim? Lütfen sorunuzu detaylı bir şekilde açıklayın."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        },
+        {
+          "scenario": "genel_destek",
+          "system_prompt": "Sen Rani Mobilya'nın deneyimli müşteri hizmetleri temsilcisisin.\nGenel müşteri hizmetlerinde:\n- Sıcak ve samimi ol\n- Sorunları dinle\n- Çözüm odaklı yaklaş\n- Gerekirse ilgili departmana yönlendir",
+          "user_prompt": "Müşteri: Ne zaman teslim edilir?\nKanal: Whatsapp\nSaat: 09:30",
+          "examples": [
+            {
+              "input": "Merhabalar, yardım istiyorum",
+              "output": "Merhaba! Rani Mobilya müşteri hizmetlerine hoş geldiniz. Size nasıl yardımcı olabilirim? Lütfen sorunuzu detaylı bir şekilde açıklayın."
+            }
+          ],
+          "base_system": "Sen Rani Mobilya'nın profesyonel müşteri hizmetleri temsilcisisin.\n\nTEMEL KURALLAR:\n- Her zaman nazik, yardımsever ve profesyonel ol\n- Türkçe konuş, resmi ama samimi dil kullan\n- Müşterinin sorununu tamamen anlayıp çöz\n- Bilmediğin konularda tahmin yapma, uzman arkadaşlara yönlendir\n- Her yanıtta müşteri memnuniyetini ön planda tut\n\nRANI MOBİLYA HAKKINDA:\n- Kaliteli ve modern mobilya üreticisi\n- Hızlı teslimat ve montaj hizmeti\n- 14 gün iade garantisi\n- Whatsapp, web sitesi ve Instagram'dan destek\n- Mesai saatleri: Hafta içi ve Cumartesi 09:00-23:30\n\nYANIT STİLİ:\n- Kısa ve anlaşılır cümleler\n- Müşterinin ismini kullan (varsa)\n- Emojiler kullanarak sıcaklık kat\n- Sonraki adımları net belirt"
+        }
+      ]
+    }
+  },
+  {
+    "approach": "Fine-Tuning",
+    "individual_scores": {
+      "response_time": 1.0,
+      "accuracy": 0.9020361981573238,
+      "customer_satisfaction": 0.8596067554574585,
+      "consistency": 0.9156171795533963,
+      "cost_efficiency": 0.7
+    },
+    "final_score": 0.8928551252445712,
+    "raw_metrics": {
+      "response_times": [
+        0.8073291144738344,
+        0.9156851112738195,
+        1.188216604105643,
+        1.1032890917810925,
+        0.8718682968820471,
+        0.8058362303997876,
+        1.166956206767328,
+        0.8233608504148693,
+        0.920863165950441,
+        0.8835599396528057
+      ],
+      "accuracy_scores": [
+        0.9411040418792038,
+        0.8550952769980187,
+        0.8901343571254202,
+        0.9339541827383264,
+        0.9257841211578429,
+        0.8951022870562908,
+        0.8814006828304757,
+        0.8705045856498381,
+        0.9336164523210162,
+        0.8936659938168047
+      ],
+      "satisfaction_scores": [
+        0.8067280774067306,
+        0.9081266635066605,
+        0.9088254088214183,
+        0.8540497373924589,
+        0.8411492987071737,
+        0.8702078121242212,
+        0.8407958692800495,
+        0.8684558258565414,
+        0.830984280059063,
+        0.8667445814202693
+      ],
+      "consistency_scores": [
+        0.9470971992106004,
+        0.9239714683808263,
+        0.9241379883868981,
+        0.8598145221636053,
+        0.9321894706413101,
+        0.8846513882492488,
+        0.9398079211719128,
+        0.9445114400056756,
+        0.9082098099805544,
+        0.8917805873433298
+      ],
+      "dataset_quality": {
+        "size": 4304,
+        "avg_input_length": 234.03136617100373,
+        "avg_output_length": 116.52486059479554,
+        "diversity_score": 0.3766263940520446,
+        "overall_score": 0.7573079182156134
+      }
+    }
+  },
+  {
+    "approach": "RAG",
+    "individual_scores": {
+      "response_time": 1.0,
+      "accuracy": 0.49171160846444417,
+      "customer_satisfaction": 0.6530899333992016,
+      "consistency": 0.8235831063781601,
+      "cost_efficiency": 0.85
+    },
+    "final_score": 0.7193234318458576,
+    "raw_metrics": {
+      "response_times": [
+        0.0053558349609375,
+        0.006966114044189453,
+        0.006003618240356445,
+        0.0069980621337890625,
+        0.006003618240356445,
+        0.005999326705932617,
+        0.006995201110839844,
+        0.006001472473144531,
+        0.007039308547973633,
+        0.006981611251831055
+      ],
+      "accuracy_scores": [
+        0.7554745491091049,
+        0.5130017302398628,
+        0.4686364885903373,
+        0.6331427039380902,
+        0.37001317838313,
+        0.4380172875139976,
+        0.5538504597914641,
+        0.40926342517972725,
+        0.4771865309545095,
+        0.2985297309442181
+      ],
+      "satisfaction_scores": [
+        0.47676523966974427,
+        0.5966929605250461,
+        0.851857714051707,
+        0.6969924631450748,
+        0.6419459017776415,
+        0.5895710702480895,
+        0.4178666442235465,
+        0.7774510290072052,
+        0.4931234762519084,
+        0.9886328350920525
+      ],
+      "consistency_scores": [
+        0.8233314121314063,
+        0.8325382570879705,
+        0.8504850214743306,
+        0.9370646227734329,
+        0.8043876076001835,
+        0.8488834954819411,
+        0.7304298406443117,
+        0.9434975579694429,
+        0.6650871187864902,
+        0.8001261298320926
+      ],
+      "responses": [
+        {
+          "response": "Sipariş durumunuz için: Kontrollerimi sağlıyorum.",
+          "confidence": 0.7554745491091049,
+          "sources": [
+            {
+              "score": 0.7554745491091049,
+              "customer_context": "Buranın en ve yüksekliğini öğrenebilir miyim",
+              "agent_response": "Kontrollerimi sağlıyorum.",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.6686476309340598,
+              "customer_context": "Ürünün kargo boyutunu öğrenebilir miyim",
+              "agent_response": "Kontrol sağlıyorum.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Kargo durumu ile ilgili: Kontrol ediyorum.",
+          "confidence": 0.5130017302398628,
+          "sources": [
+            {
+              "score": 0.5130017302398628,
+              "customer_context": "Ürünüm ne zaman gelir aciliyeti varda Yarın çıkış yapabilir misiniz yoksa iade edeceğim",
+              "agent_response": "Kontrol ediyorum.",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.46152239708890125,
+              "customer_context": "Merhaba pelin hanım. Siparişim ne durumda acaba merak ediyorum tahmini ne zaman gelir",
+              "agent_response": "Kontrol ediyorum.",
+              "channel": "Web Sohbeti"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Merhaba, size nasıl yardımcı olabilirim?",
+          "confidence": 0.4686364885903373,
+          "sources": [
+            {
+              "score": 0.4686364885903373,
+              "customer_context": "Merhabalar İade kargomuz vardı iade numarasını gondermemizi istemistiniz",
+              "agent_response": "Merhaba, size nasıl yardımcı olabilirim?",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.4351347184671059,
+              "customer_context": "İade kargoya verdim",
+              "agent_response": "Merhaba, kontrol ediyorum.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Ürünümüz hakkında: Merhaba, kontrol ediyorum.",
+          "confidence": 0.6331427039380902,
+          "sources": [
+            {
+              "score": 0.6331427039380902,
+              "customer_context": "Fiyatı nedir",
+              "agent_response": "Merhaba, kontrol ediyorum.",
+              "channel": "IG_rani_mobilya"
+            },
+            {
+              "score": 0.5971309182367934,
+              "customer_context": "Merhaba fiyatı nedir",
+              "agent_response": "Merhaba, kontrollerimi sağlıyorum.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "IG_rani_mobilya"
+        },
+        {
+          "response": "Kargo durumu ile ilgili: Tabi, güncel adresi rica edebilir miyim*",
+          "confidence": 0.37001317838313,
+          "sources": [
+            {
+              "score": 0.37001317838313,
+              "customer_context": "Evet günceldir Adres değişikli yapabilir miyim?",
+              "agent_response": "Tabi, güncel adresi rica edebilir miyim*",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.310458519370592,
+              "customer_context": "[TELEFON] Siparis no fotoda Teslimat adresi Besiktas iStnbul",
+              "agent_response": "Teşekkürler, kontrol sağlıyorum.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Firmamızın montaj hizmeti bulunmamaktadır.",
+          "confidence": 0.4380172875139976,
+          "sources": [
+            {
+              "score": 0.4380172875139976,
+              "customer_context": "Takım için gelecekler değil mi",
+              "agent_response": "Firmamızın montaj hizmeti bulunmamaktadır.",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.3852171835142124,
+              "customer_context": "hayır almadım",
+              "agent_response": "Montaj için sizlerle numara paylaşıyorum, arama sağladınız taktirde tarafınıza montaj hizmeti için destek sağlanacaktır.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Kontrol sağlıyorum.",
+          "confidence": 0.5538504597914641,
+          "sources": [
+            {
+              "score": 0.5538504597914641,
+              "customer_context": "3403 kargo ne kadar",
+              "agent_response": "Kontrol sağlıyorum.",
+              "channel": "Web Sohbeti"
+            },
+            {
+              "score": 0.4561732796858429,
+              "customer_context": "Detaylı resimlerini gönderme şansınız var Mıdır acaba Bir de garanti vs mevcut mudur",
+              "agent_response": "Siparişiniz tarafınıza teslim edildikten sonra ürünün 2 yıl garanti süresi bulunmaktadır. Garanti belgesi gönderilmemekte olup faturanız ve sistemde yer alan sipariş kayıtlarınız garanti desteği için yeterli olacaktır.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Web Sohbeti"
+        },
+        {
+          "response": "Merhaba kontrol sağlıyorum.",
+          "confidence": 0.40926342517972725,
+          "sources": [
+            {
+              "score": 0.40926342517972725,
+              "customer_context": "Bu var mı elinizde",
+              "agent_response": "Merhaba kontrol sağlıyorum.",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.3197754389998517,
+              "customer_context": "İndirim çekinizi almak istiyorum o halde",
+              "agent_response": "Tabi, ilgili birime iletiyorum. İndirim çeki tarafınıza sms ile iletilecek olup web sitemizden yapacağınız alışverişlerde kullanım sağlayabilirsiniz.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Kontrol ediyorum.",
+          "confidence": 0.4771865309545095,
+          "sources": [
+            {
+              "score": 0.4771865309545095,
+              "customer_context": "9899808569 nolu siparişim son durumu nedir",
+              "agent_response": "Kontrol ediyorum.",
+              "channel": "Whatsapp"
+            },
+            {
+              "score": 0.42048002805091544,
+              "customer_context": "9899808569 nolu siparişim son durumu nedir",
+              "agent_response": "Merhaba kontrol sağlıyorum.",
+              "channel": "Whatsapp"
+            }
+          ],
+          "channel_context": "Whatsapp"
+        },
+        {
+          "response": "Merhabalar, ismim Müge. Size nasıl yardımcı olabilirim?",
+          "confidence": 0.2985297309442181,
+          "sources": [
+            {
+              "score": 0.2985297309442181,
+              "customer_context": "Sıkça Sorulan Sorular Sipariş nasıl verilir? Ödeme seçenekleri nelerdir? Canlı Destek",
+              "agent_response": "Merhabalar, ismim Müge. Size nasıl yardımcı olabilirim?",
+              "channel": "Web Sohbeti"
+            },
+            {
+              "score": 0.2984032540160255,
+              "customer_context": "Sıkça Sorulan Sorular Sipariş nasıl verilir? Ödeme seçenekleri nelerdir? Canlı Destek",
+              "agent_response": "Merhaba ,ismim Hilal. Size nasıl yardımcı olabilirim ?",
+              "channel": "Web Sohbeti"
+            }
+          ],
+          "channel_context": "Web Sohbeti"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,533 @@
+{% extends "base.html" %}
+
+{% block title %}AI Chat - Rani Müşteri Hizmetleri{% endblock %}
+
+{% block extra_css %}
+<style>
+    .chat-container {
+        height: 70vh;
+        border: 1px solid #dee2e6;
+        border-radius: 15px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #f8f9fa;
+    }
+
+    .chat-input-area {
+        padding: 15px 20px;
+        border-top: 1px solid #dee2e6;
+        background: white;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .message {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .message.user {
+        justify-content: flex-end;
+    }
+
+    .message.assistant {
+        justify-content: flex-start;
+    }
+
+    .message-content {
+        max-width: 70%;
+        padding: 12px 18px;
+        border-radius: 18px;
+        word-wrap: break-word;
+        position: relative;
+    }
+
+    .message.user .message-content {
+        background: var(--secondary-color);
+        color: white;
+        border-bottom-right-radius: 5px;
+    }
+
+    .message.assistant .message-content {
+        background: white;
+        color: var(--dark-color);
+        border: 1px solid #e0e0e0;
+        border-bottom-left-radius: 5px;
+    }
+
+    .message-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+    .user-avatar {
+        background: var(--secondary-color);
+        color: white;
+    }
+
+    .assistant-avatar {
+        background: var(--success-color);
+        color: white;
+    }
+
+    .message-time {
+        font-size: 11px;
+        color: #888;
+        margin-top: 5px;
+    }
+
+    .message-meta {
+        font-size: 10px;
+        opacity: 0.7;
+        margin-top: 5px;
+    }
+
+    .typing-indicator {
+        display: none;
+        padding: 10px 18px;
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 18px;
+        margin-bottom: 15px;
+        max-width: 70%;
+    }
+
+    .typing-dots {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .typing-dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #999;
+        animation: typing 1.4s infinite ease-in-out;
+    }
+
+    .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes typing {
+        0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+        40% { transform: scale(1); opacity: 1; }
+    }
+
+    .model-selector {
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .model-selector:focus {
+        background: rgba(255,255,255,0.2);
+        border-color: rgba(255,255,255,0.4);
+        color: white;
+        box-shadow: none;
+    }
+
+    .send-button {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .chat-input {
+        border-radius: 25px;
+        border: 1px solid #dee2e6;
+        padding: 12px 20px;
+        resize: none;
+    }
+
+    .chat-input:focus {
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    }
+
+    .online-indicator {
+        width: 12px;
+        height: 12px;
+        background: #27ae60;
+        border: 2px solid white;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+    }
+
+    .agent-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .agent-avatar-header {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #27ae60;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="chat-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="agent-info">
+                    <div class="agent-avatar-header">
+                        <i class="fas fa-robot"></i>
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div>
+                        <h6 class="mb-0">Rani AI Asistan</h6>
+                        <small class="opacity-75">
+                            <i class="fas fa-circle text-success" style="font-size: 8px;"></i>
+                            Çevrimiçi
+                        </small>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <select class="form-select model-selector" id="modelSelector">
+                        <option value="prompt">🎯 Prompt Engineering</option>
+                        <option value="rag">📚 RAG Sistemi</option>
+                        <option value="hybrid">🔄 Hibrit Mod</option>
+                    </select>
+                    
+                    <button class="btn btn-outline-light btn-sm" onclick="clearChat()">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message assistant">
+                    <div class="message-avatar assistant-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <div class="message-content">
+                            <div>
+                                Merhaba! Rani Mobilya AI asistanıyım. 😊<br>
+                                Size nasıl yardımcı olabilirim?
+                                <br><br>
+                                <strong>Yapabileceklerim:</strong><br>
+                                📦 Sipariş takibi<br>
+                                🔄 İade işlemleri<br>
+                                🛋️ Ürün bilgileri<br>
+                                🚚 Kargo sorguları<br>
+                                💬 Genel destek
+                            </div>
+                            <div class="message-time">Şimdi</div>
+                            <div class="message-meta">Sistem Mesajı</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="message-avatar assistant-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+                <div class="row g-2">
+                    <div class="col">
+                        <textarea 
+                            class="form-control chat-input" 
+                            id="messageInput" 
+                            placeholder="Mesajınızı yazın..."
+                            rows="1"
+                            onkeypress="handleKeyPress(event)"></textarea>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary send-button" onclick="sendMessage()" id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Quick Replies -->
+                <div class="mt-3">
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-outline-secondary btn-sm" onclick="sendQuickReply('Siparişim ne zaman gelir?')">
+                            📦 Sipariş Durumu
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="sendQuickReply('Bu ürünü iade edebilir miyim?')">
+                            🔄 İade Süreci
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="sendQuickReply('Ürün fiyatı nedir?')">
+                            💰 Fiyat Bilgisi
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="sendQuickReply('Kargo ne zaman gelir?')">
+                            🚚 Kargo Takip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chat Stats -->
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="text-primary" id="messageCount">0</h5>
+                <small class="text-muted">Gönderilen Mesaj</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="text-success" id="avgConfidence">-%</h5>
+                <small class="text-muted">Ortalama Güven</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="text-info" id="avgResponseTime">-ms</h5>
+                <small class="text-muted">Ortalama Yanıt Süresi</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let messageCount = 0;
+let totalConfidence = 0;
+let totalResponseTime = 0;
+let responseCount = 0;
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+    }
+}
+
+function sendQuickReply(message) {
+    document.getElementById('messageInput').value = message;
+    sendMessage();
+}
+
+function sendMessage() {
+    const input = document.getElementById('messageInput');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message to chat
+    addMessage(message, 'user');
+    
+    // Clear input
+    input.value = '';
+    
+    // Show typing indicator
+    showTyping();
+    
+    // Get selected model
+    const approach = document.getElementById('modelSelector').value;
+    
+    // Send to API
+    const startTime = Date.now();
+    
+    $.ajax({
+        url: '/api/ask',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            message: message,
+            approach: approach
+        }),
+        success: function(response) {
+            const responseTime = Date.now() - startTime;
+            hideTyping();
+            addMessage(response.answer, 'assistant', response, responseTime);
+            updateStats(response.confidence, responseTime);
+        },
+        error: function() {
+            hideTyping();
+            addMessage('Üzgünüm, şu an yanıt veremiyorum. Lütfen tekrar deneyin.', 'assistant', null, 0);
+        }
+    });
+}
+
+function addMessage(content, sender, metadata = null, responseTime = 0) {
+    const messagesContainer = document.getElementById('chatMessages');
+    const time = new Date().toLocaleTimeString('tr-TR', {hour: '2-digit', minute: '2-digit'});
+    
+    let metaInfo = '';
+    if (metadata) {
+        const confidenceClass = metadata.confidence > 0.7 ? 'high-confidence' : 
+                              metadata.confidence > 0.4 ? 'medium-confidence' : 'low-confidence';
+        
+        metaInfo = `
+            <div class="message-meta">
+                <span class="badge ${confidenceClass} me-1">
+                    ${Math.round(metadata.confidence * 100)}% güven
+                </span>
+                <span class="text-muted">
+                    ${metadata.method} • ${responseTime}ms
+                </span>
+            </div>
+        `;
+    }
+    
+    const messageHTML = `
+        <div class="message ${sender}">
+            ${sender === 'assistant' ? `
+                <div class="message-avatar assistant-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+            ` : ''}
+            <div>
+                <div class="message-content">
+                    <div>${content}</div>
+                    <div class="message-time">${time}</div>
+                    ${metaInfo}
+                </div>
+            </div>
+            ${sender === 'user' ? `
+                <div class="message-avatar user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            ` : ''}
+        </div>
+    `;
+    
+    messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    if (sender === 'user') {
+        messageCount++;
+        updateMessageCount();
+    }
+}
+
+function showTyping() {
+    document.getElementById('typingIndicator').style.display = 'flex';
+    const messagesContainer = document.getElementById('chatMessages');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function hideTyping() {
+    document.getElementById('typingIndicator').style.display = 'none';
+}
+
+function clearChat() {
+    if (confirm('Tüm sohbet geçmişini silmek istediğinizden emin misiniz?')) {
+        const messagesContainer = document.getElementById('chatMessages');
+        // Keep only the welcome message
+        const welcomeMessage = messagesContainer.querySelector('.message.assistant');
+        messagesContainer.innerHTML = '';
+        messagesContainer.appendChild(welcomeMessage);
+        
+        // Reset stats
+        messageCount = 0;
+        totalConfidence = 0;
+        totalResponseTime = 0;
+        responseCount = 0;
+        updateStats();
+        updateMessageCount();
+    }
+}
+
+function updateStats(confidence = null, responseTime = null) {
+    if (confidence !== null && responseTime !== null) {
+        totalConfidence += confidence;
+        totalResponseTime += responseTime;
+        responseCount++;
+    }
+    
+    const avgConfidence = responseCount > 0 ? Math.round((totalConfidence / responseCount) * 100) : 0;
+    const avgResponseTime = responseCount > 0 ? Math.round(totalResponseTime / responseCount) : 0;
+    
+    document.getElementById('avgConfidence').textContent = avgConfidence + '%';
+    document.getElementById('avgResponseTime').textContent = avgResponseTime + 'ms';
+}
+
+function updateMessageCount() {
+    document.getElementById('messageCount').textContent = messageCount;
+}
+
+// Auto-resize textarea
+document.getElementById('messageInput').addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+});
+
+// Focus on input when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('messageInput').focus();
+});
+
+// Model selector change
+document.getElementById('modelSelector').addEventListener('change', function() {
+    const approach = this.value;
+    let approachName = '';
+    
+    switch(approach) {
+        case 'prompt': approachName = 'Prompt Engineering'; break;
+        case 'rag': approachName = 'RAG Sistemi'; break;
+        case 'hybrid': approachName = 'Hibrit Mod'; break;
+    }
+    
+    addMessage(`AI modeli "${approachName}" olarak değiştirildi. ⚙️`, 'assistant');
+});
+</script>
+{% endblock %} 

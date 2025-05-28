@@ -1,0 +1,541 @@
+[
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Bu siparişimi iade etmek istiyorum",
+    "output": "Tabiki, kontrol sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ücret iadesi ne zaman yapılır",
+    "output": "Merhaba, siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ben hiç memnun değilim üründen çok zor açılıyor bir an önce kargolamayı lütfen yapın eğer olmazsa iade etmek istiyorum",
+    "output": "Merhaba ,siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Geri ödemesi ne zaman gerçekleşecek?",
+    "output": "Ürün tarafımıza ulaştığı takdirde 5 iş günü içerisinde ücret iadeniz yansıyacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba, iade kargosuna iade kodu, sipariş kodu vs yazmalı mıyım?",
+    "output": "1827548851337 nolu Rani Mobilya cari kodu ile ücretsiz bir şekilde Aras Kargo'ya iade edebilirsiniz. İade adresi: Tatkavaklı Mah. Tatkavaklı Balıkesir Cd. No:77 Mustafakemalpaşa / Bursa",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Her şeyi iade etmek zorundayım o halde",
+    "output": "Dilerseniz bölgenizde anlaşmalı olduğumuz bir montaj ustası bulunmaktadır, numarasını sizlerle paylaşabilirim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Bugün iade kargosunu aras kargo teslim alacak. Bilginize",
+    "output": "Merhabalar, gönderi kodunu iletmeniz yeterli olacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "İyi günler Ben ürününüzü teslim aldım ve kurulumunu yaptım, gördüğüm olumsuzlukları sizinle paylaşmak istedim. Görülen problemlerin sadece tensport hasarlı değil bilmenizi istedim. Benden yana sıkıntı yok ama umarım bu geri dönüşün diğer müşterilerini ve işletmeniz için yararlı olur. Yeni yılınız kutlu olsun",
+    "output": "Merhabalar, dilerseniz yedek parça gönderimi konusunda destek olabiliriz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Tamam şema yanımda mevcut değil geri dönüş sağlayacağım",
+    "output": "Tekrar dönüş yaptığınızda memnuniyetle yardımcı olacağız.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Hasarlı kargo subede gözüküyor gerimi gidip tekrarı gelecek anlamadım",
+    "output": "Merhabalar, siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Evet iade edilmesini istiyorum",
+    "output": "Kargo firmasına bilgi iletilecektir. Ürün fabrikamıza iade edildiğinde Trendyol tarafından ücret iadesi yapılacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Tekrar merhaba şömine için indirim uygulamıştınız ama alamadım trendyoldan iade kartıma biraz önce geldi kusura bakmayın tekrar gönderme imkanınız varmı indirim ayın 5 ine kadardı çok özür dilerim",
+    "output": "Merhabalar, siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Fakat sitede iade seçeneği yok",
+    "output": "Kontrol sağladığımda ürününüzün kargoda olduğunu görüntülemekteyim bu sebeple iade işlemi sağlanamamaktadır ancak dilerseniz teslimatı sağlayacak kuryeye ürünü teslim etmemesi yönünde bilgi iletebilirim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Lütfen en yakin zamanda iademin yapılması için destek olun",
+    "output": "Yılbaşına yetişmediği için teslim almak istemediğinizi beyan ettiğinizi görüntülüyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ama iade baslatamayiz teslim almayın denildi",
+    "output": "İlgili sürücüye teslim edilmemesi için not iletilmiş ve bu doğrultuda ürün 03.01.2024 tarihinde fabrikamız iade olarak yönlendirilmiştir.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Saat 4e kadar evde olamayacağım bugün, geri gitmesini de istemiyorum. Eğer biraz geç gelirlerse ben teslim alacağım. Böyle bir uygulama olmaması durumunda site güvenliğine bırakılabilir.",
+    "output": "Merhabalar, kontrollerimi sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "iade işlemini gerçekleştirdim",
+    "output": "Merhaba, kontrollerimi sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ücret iadesi kaç gün içerisinde olur acaba",
+    "output": "İade ürün tarafımıza ulaştıktan sonra 5 iş günü içinde ücret iadesi işlemin yapıldığı banka kartına otomatik olarak yapılacak ve sms ile bilgilendirme sağlanacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ücret iademiz ne zaman olacak",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "gerçekten iade etmek durumunda kalacağım bu kadar süre çok fazla özel koltuk takımı yaptırdım o bile 15 günde geldi",
+    "output": "Siparişinizin 03/01/2025 tarihinde kargoya verilmesi planlanmakta olup, kargoya verildikten sonra bulunduğunuz şehire ortalama teslimat süresi 2-6 iş günüdür. Siparişiniz kargoya verildikten sonra kargo takip bilgileri cep telefonunuza sms yolu ile iletilecektir.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Iade saglayabiliriz en kötü ihtimalle. Ileriki aylarda tekrar siparis olustururum",
+    "output": "Eğer ürünü şuan için kontrol edemeyecekseniz ilerleyen süreçte tarafımıza ulaşmanız halinde destek sağlanması adına ilgili birime bilgi iletebilirim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Trendyoldan almistim. Kargomun henuz teslim edildigi belirtilmemis. Onu teslim edildi yaparsaniz iade talebi olusturacagim",
+    "output": "Kontrol sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Urunleri burada birakiyorum. Yarin kargo sirketi gelip teslim alacak cunku teslim edebilecek bir vaktim yok iade icin.",
+    "output": "Anlıyorum bilgilendirme için teşekkür ederiz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Adam 5 geçe aradı kargoyu gelip almadınız diye. Ne kargosu bilgi mesajı gelmedi dedim. Rani mobilya mı dedim evet dedi. Arayacağım dedi. 13 geçe peşpeşe mesaj geldi. Geri aradığımda sizin kargonuz kırılmış tutanak tutuyoruz. Kargoyu geri göndereceğiz dediler. Arayan numara da budur",
+    "output": "Kontrol sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Tamamdır sağladıktan sonra geri dönüş sağlayacağım",
+    "output": "Kontrol sağladıktan sonra sorunun devam etmesi halinde bizimle yine iletişim sağlamanızı rica ederim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "peki sipariş kaç günde iade edilir",
+    "output": "30 gün boyunca koşulsuz iade hakkınız mevcuttur.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba kolay gelsin göndermiş olduğunuz masa çok güzel geri iade yapmak istemiyorum kargo şirketi galiba ıslatmış malzemeyi bir ayak kabarmış",
+    "output": "Merhabalar. Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Peki iade ne zaman yapılmış",
+    "output": "Ürün fabrikamıza ulaştığında ücret iadeniz en geç 5 iş günü içerisinde ilgili karta yansıtılacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Evet 5626 tl aldım fakat indirime girdi 613 tl farkı hesaba geri tanımlayacaktı",
+    "output": "Kontrollerimi sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Siz geri iade aldığınız için ben bu kuponu da kullanamıyoru.",
+    "output": "Kısa bir süre beklemenizi rica ederim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ama şuan iade olduğu için o kuponumu da kaybettim",
+    "output": "Kısa bir süre beklemenizi rica ederim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Aksi taktirde ücret iadesi istiyorum",
+    "output": "Sürücü arkadaşlarımız adresinizi ziyaret etmişler ancak bloğunuzu bulamadıkları için arama sağlamışlar, ancak maalesef ki ulaşılamadıkları için iade olarak tarafımıza yönlendirilmiştir. Tekrar sipariş vermek isterseniz aynı fiyattan almanız konusunda destek olabiliriz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "3 dakikada iade nedir neyse",
+    "output": "Kısa bir süre bekletebilir miyim sizi, sürücü ile iletişim kurarak detaylı bilgi alacağım.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "8 dakikada iade nedir",
+    "output": "İlgili birimlerden bilgi alınmaktadır. Kısa bir süre beklemenizi rica edeceğim.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhabalar değişim talep ettiğim ürün kargoya verildi fakat henüz bir takip numarası paylaşılmadı",
+    "output": "Merhabalar. Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhabalar, masa takımında defolu ürünleri kargoya iade ettim. Bilginize",
+    "output": "Merhaba, kontrol ediyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "3 numara değişimi yaparken arka sunta kırılacak sökerken",
+    "output": "1'er adette mi sorun bulunmaktadır ?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Eğer görüntü olarak begenmezsek kurulumu söküp hepsini iade edebiliyomuyuz",
+    "output": "30 gün koşulsuz iade hakkınız bulunmaktadır. İade edeceğinizi düşündüğünüz taktirde demonte hale getirip bizimle iletişime geçebilirsiniz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba beni aramışsınız geri arıyorum ama telefon çalmıyor",
+    "output": "Merhaba, bu platformdan sadece adres teyidi ve konum alımları yapılmaktadır. Siparişiniz ile ilgili tüm sorularınız için 0850 255 16 55 nolu hat üzerinden müşteri hizmetlerimizi arayabilir yada whatsapp üzerinden mesaj atabilirsiniz.",
+    "scenario": "return_exchange",
+    "channel": "Ranimax Adres Doğrulama"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Bu ürünler bu şekilde ben iade istiyorum kimi parçalar büyük bazı yerler yerleşmiyor",
+    "output": "Merhaba ,siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Bu ürünü toparlayım kargo yaptıgımda ücretimin tamamı iade olur mu?",
+    "output": "Siparişinizi Trendyol üzerinden oluşturduğunuz için iade işlemini yine siz gerçekleştirebiliyorsunuz. Ürün iadeniz bize ulaştıktan sonra ücret iadesi tarafınıza sağlanacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Sipariş esnasinda sorun yaşarsam geri dönüş yaparım size",
+    "output": "Müşteri hizmetlerimize, 0850 255 16 55 nolu hattımızdan hafta içi ve cumartesi günleri 09:00-12:30 / 13:30-17:00 saatleri arasında telefon yolu ile ulaşabilirsiniz. Dilerseniz aynı numaraya whatsapp üzerinden mesaj atarak 23:30 a kadar destek alabilirsiniz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ürünleri açtıktan sonra kolileri geri dönüşüme gonderdim",
+    "output": "Atakent Mah dadaloğlu cad atagül sitesi no:4 d:36 kat 8 Ümraniye İstanbul adresiniz güncel midir?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "3 koliye de iade kodu oluşturun",
+    "output": "Kontrol sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Yanlış gelen bi kargo vardır onu geri göndermem gerekiyor size",
+    "output": "Görüşme detaylarınız görülmektedir. Doğru kolinin tarafınıza teslim edildiği görülmektedir, doğru mudur?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba ürün geldi fakat kusurlu çıktı Ürün için iade talebi oluşturdum Yenisi emen sağlam olarak gonderilirmi Bana yardımcı okur musunuz",
+    "output": "Merhabalar, siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Benim değişim kargom vardı",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Web Sohbeti"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Geri iyade yaptim",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Rani mobilya ben de geri dönüş yapiyorum. Eksik ginderim ve kırık parça gelmiş. Daha çabuk göndermeniz gerekir, müşteri memnuniyeti açısından",
+    "output": "Yedek parça sırasına göre çıkış yapılmaktadır. Bu sebeple maalesef sürece müdahale edememekteyiz. Yukarıda tarafınıza iletilen süreleri baz almanızı rica ederiz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Bu neden iade edildi",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Digeri benim alanıma daha uygune",
+    "output": "Ürün stoklarımızda tükenmiş olup yakın zaman içinde üretim planlaması bulunmamaktadır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Elinizde bulunan hatalı koliyi 1827548851337 nolu Rani Mobilya cari kodu ile ücretsiz bir şekilde Aras Kargo'ya iade edebilirsiniz. *İade adresi:* Tatkavaklı Mah. Tatkavaklı Balıkesir Cd. No:77 Mustafakemalpaşa / Bursa",
+    "output": "Sipariş bilgilerinizi paylaşmanız durumunda sizlere destek olacağız.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Kolileri açmadan hatalı bir durum var ise de değişimi yapacağım",
+    "output": "Eşleşmeme sebebi sizlere aktarılmıştır. Ürün web sitemizde JE137 olarak geçmektedir. Ancak üründe kullanılan alt ve üst modüller diğer ürünlerimizde de kullanıldığı için modül olarak kodları farklıdır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Iade etmek de istemedim ama camini tekrar gondereblrmnz",
+    "output": "Sipariş bilgilerinizi paylaşmanızı rica ederiz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Paramın iadesini istiyorum artik",
+    "output": "Kontrollerimi sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Web Sohbeti"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ya gelin ürününü zu geri alın yada 1 nolu parçayı düzgün gönderin",
+    "output": "Kontrol sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Yarın çıkış yapabilir misiniz yoksa iade edeceğim",
+    "output": "Kontrol ediyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Teşekkür ederim sağolun fakat 18 i çok geç olacak bizim için üzülerek iade edeceğim üzgünüm iyi akşamlar",
+    "output": "Satın alma işlemi Trendyol üzerinden yapıldığı için iptal talebinizi Trendyol asistan üzerinden firmamıza iletmeniz gerekmektedir. Trendyol hesabınızdan siparişinize girdikten sonra , ''Satıcıya mesaj gönder-Sipariş İptali'' adımlarını izleyerek iptal talebinizi ilettiğinizde gerekli aksiyonlar alınacaktır.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Delikler büyük mil girmesi imkansız ürün iadesi oluşturacağım teşekkürler",
+    "output": "Hataya ilişkin kayıt oluşturulmuştur. Sorunun çözülmemesi veya talep etmeniz halinde iade işlemi gerçekleştirebilirsiniz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba, 29 aralık tarihinde aldığım #119983 adlı siparişi iade etmek istiyorum.",
+    "output": "Merhaba, kontrol sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Birde tahsilat için ne yapmam gerekiyor hesabıma tekrar geri geçmesi için",
+    "output": "Ancak ürünü istemiyorsanız kuryeye ürünü teslim etmemesi için bilgi iletbiliriz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "İyi akşamlar evet kontrol etmişler koli çok olunca üst üste olduğundan görememişler buldular fakat yukarıda resmini gönderdiğim çok amaçlı mutfak dolabının alt tarafını kurulumunu yapmışlar üst tarafının kurulumunda sorun çıkmış çünkü açılan delikler birbirine tutmamış bunu muhtemelen iade edip yenisini talep ed",
+    "output": "Üretim sonrası ürünlerimizin paketlemesi dikkatli bir şekilde yapılmaktadır. Ancak olası tüm sorunlarda tarafınıza tekrar ücretsiz parça gönderimini sağlamaktayız.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Çok amaçlı mutfak dolabının alt kısmını montajı yapılırken üst tarafını montajı deliklerin birbirine denk gelmemesinden dolayı kurulum yapılamamıştır bunu iade edip yenisini talep ederken tekrar alt dolabı söküp gönderecek miyiz yoksa üst tarafın sorunlu olan parçalarını mı göndereceğiz",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Anladım yalnız pazartesi günü iade için son günü pazartesi biz de yayladayız herhangi bir sorun olur mu",
+    "output": "Her hangi bir sorun olmayacaktır. Memnuniyetle yardımcı olacağız sizlere.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Sayin Burak Erol, fiyat farki sebebi ile hediye ceki talebiniz alinmistir. Ürün teslimi sonrasi 0850 255 16 55 nolu whatsapp hattimiza mesaj atmaniz durumunda 1766 TL degerinde hediye ceki tanimlamasi yapilacaktir. B021",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Sadece kırık parçayı iade etmemiz yeterli mi",
+    "output": "Elinizde bulunan hasarlı parçalar iade alınmamaktadır. İmha edebilir yada farklı şekillerde değerlendirebilirsiniz.*",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "İade kargomuz vardı iade numarasını gondermemizi istemistiniz",
+    "output": "Merhaba, size nasıl yardımcı olabilirim?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba Gülcan hanım benim bir iadem vardı henüz ücretim yatırılmadı ama yardımcı olur musunuz?",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Web Sohbeti"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba benim iade işlemi vardı",
+    "output": "Siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Şu cam kırıldı komple değişim olacak",
+    "output": "Firmamız tarafından sadece yedek parça gönderimi sağlanabilmektedir.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Sitede iade yapamadım",
+    "output": "Merhaba ,kontrollerimi sağlıyorum.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Merhaba şömineler tekrar stoğa geri gelecek mi",
+    "output": "Merhabalar tekrar stoğa girebilir ancak net bir tarih bilgisi iletemiyoruz. Web sitemizi ara ara ziyaret ederek takip etmenizi rica ederiz.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "İyi günler, trend yoldan 2 adet ders çalışma masası aldık sizden , bugün kurulumunu yapmaya çalışıyoruz fakat 2 çekmeceninde dişli mil yerleri sıkışmıyor yuvaları bol olmuş. Butür konularda konularda yardımcı oluyormusunuz yoksa ürünü geri iadesi edelim?",
+    "output": "Merhaba ,siparişinizin kontrol ve teyidi için, sipariş esnasında kullandığınız aşağıdaki bilgilerden 3 tanesini bizimle paylaşabilir misiniz? Ad-Soyad Telefon numarası Sipariş numarası Teslimat adresi (İl-İlçe)",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Digeri de bu",
+    "output": "Diğer etiketleri de paylaşır mısınız ?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Geri kalan da ya 2 koli vardı ya da 3 koli",
+    "output": "Ürünün tamamını kurmuş muydunuz ?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Trendyoldan sipariş verdik geri dönüşünüz için teşekkür ederim",
+    "output": "Yardımcı olmamı istediğiniz farklı bir konu var mıdır?",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  },
+  {
+    "instruction": "Sen Rani Mobilya'nın return_exchange konusunda uzman müşteri hizmetleri temsilcisisin.",
+    "input": "Ama bunlar olayı kişiselleştirdi kargon muhtemelen geri dönüş yapacak size",
+    "output": "İletmiş olduğum gibi ilgili ekiplere teslimatınız ile ilgili kayıt oluşturulmuştur.",
+    "scenario": "return_exchange",
+    "channel": "Whatsapp"
+  }
+]

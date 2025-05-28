@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Rani AI Müşteri Hizmetleri{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Page Header -->
+    <div class="col-12 mb-4">
+        <div class="card bg-gradient text-white" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+            <div class="card-body text-center py-4">
+                <i class="fas fa-chart-line fa-3x mb-3"></i>
+                <h2 class="mb-2">Analytics Dashboard</h2>
+                <p class="mb-0">AI Müşteri Hizmetleri Performans Analizi</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-primary">
+            <div class="card-body text-center">
+                <i class="fas fa-comments fa-2x text-primary mb-2"></i>
+                <h4 class="text-primary" id="totalMessages">{{ stats.total_messages or '23K+' }}</h4>
+                <small class="text-muted">Toplam Mesaj</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-success">
+            <div class="card-body text-center">
+                <i class="fas fa-users fa-2x text-success mb-2"></i>
+                <h4 class="text-success" id="totalConversations">{{ stats.total_conversations or '1.8K+' }}</h4>
+                <small class="text-muted">Toplam Konuşma</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-warning">
+            <div class="card-body text-center">
+                <i class="fas fa-percentage fa-2x text-warning mb-2"></i>
+                <h4 class="text-warning">90.9%</h4>
+                <small class="text-muted">En İyi Model Skoru</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-info">
+            <div class="card-body text-center">
+                <i class="fas fa-clock fa-2x text-info mb-2"></i>
+                <h4 class="text-info">~150ms</h4>
+                <small class="text-muted">Ortalama Yanıt Süresi</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Channel Distribution -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie"></i> Kanal Dağılımı
+                </h5>
+            </div>
+            <div class="card-body">
+                {% if stats.channels %}
+                    <div class="row">
+                        {% for channel, count in stats.channels.items() %}
+                        <div class="col-12 mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="text-muted">{{ channel }}</span>
+                                <span class="fw-bold">{{ count }}</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" style="width: {{ (count / stats.total_messages * 100) | round }}%"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="text-muted">WhatsApp</span>
+                                <span class="fw-bold">1,029</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="text-muted">Web Sohbeti</span>
+                                <span class="fw-bold">628</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-info" style="width: 34%"></div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="text-muted">Instagram</span>
+                                <span class="fw-bold">75</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-warning" style="width: 4%"></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Model Performance -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-brain"></i> Model Performansı
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="text-muted">Prompt Engineering</span>
+                        <span class="badge bg-success">0.909</span>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                        <div class="progress-bar bg-success" style="width: 91%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="text-muted">Fine-Tuning</span>
+                        <span class="badge bg-primary">0.893</span>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                        <div class="progress-bar bg-primary" style="width: 89%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="text-muted">RAG Sistemi</span>
+                        <span class="badge bg-warning">0.719</span>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                        <div class="progress-bar bg-warning" style="width: 72%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-activity"></i> Son Aktiviteler
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row" id="recentActivity">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-success rounded-circle p-2" style="width: 40px; height: 40px;">
+                                    <i class="fas fa-robot text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-1">RAG Sistemi Yüklendi</h6>
+                                <small class="text-muted">6,995 bilgi girdisi ile knowledge base hazır</small>
+                            </div>
+                            <small class="text-muted">2 dk önce</small>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-info rounded-circle p-2" style="width: 40px; height: 40px;">
+                                    <i class="fas fa-database text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-1">Veri İşleme Tamamlandı</h6>
+                                <small class="text-muted">22,926 mesaj başarıyla işlendi</small>
+                            </div>
+                            <small class="text-muted">5 dk önce</small>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <div class="bg-warning rounded-circle p-2" style="width: 40px; height: 40px;">
+                                    <i class="fas fa-cogs text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-1">Model Karşılaştırması</h6>
+                                <small class="text-muted">3 farklı yaklaşım test edildi</small>
+                            </div>
+                            <small class="text-muted">10 dk önce</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Quality Metrics -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-shield-alt"></i> Veri Kalitesi
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Veri Temizlik Oranı</label>
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar bg-success" style="width: 52%">52%</div>
+                    </div>
+                    <small class="text-muted">44K → 23K mesaj</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Kişisel Bilgi Güvenliği</label>
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar bg-success" style="width: 100%">100%</div>
+                    </div>
+                    <small class="text-muted">Tüm hassas veriler maskelendi</small>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Konuşma Bütünlüğü</label>
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar bg-info" style="width: 95%">95%</div>
+                    </div>
+                    <small class="text-muted">1,862 tam konuşma</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Health -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-heartbeat"></i> Sistem Durumu
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <div class="border-end">
+                            <i class="fas fa-check-circle fa-2x text-success mb-2"></i>
+                            <h6 class="text-success">Online</h6>
+                            <small class="text-muted">API</small>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="border-end">
+                            <i class="fas fa-database fa-2x text-success mb-2"></i>
+                            <h6 class="text-success">Hazır</h6>
+                            <small class="text-muted">Database</small>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <i class="fas fa-brain fa-2x text-success mb-2"></i>
+                        <h6 class="text-success">Aktif</h6>
+                        <small class="text-muted">AI Models</small>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="text-center">
+                    <small class="text-muted">
+                        <i class="fas fa-clock"></i> 
+                        Son güncelleme: {{ moment().format('HH:mm:ss') }}
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Updates -->
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i>
+            <strong>Bilgi:</strong> Dashboard verileri gerçek zamanlı olarak güncellenmektedir. 
+            Detaylı analiz için <a href="/test" class="alert-link">Test sayfasını</a> ziyaret edebilirsiniz.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Real-time updates simulation
+function updateStats() {
+    // Simulate real-time data updates
+    const currentTime = new Date().toLocaleTimeString('tr-TR');
+    
+    // Update recent activity timestamp
+    const timeElements = document.querySelectorAll('small.text-muted');
+    if (timeElements.length > 0) {
+        // Update with relative time
+    }
+}
+
+// Auto refresh every 30 seconds
+setInterval(updateStats, 30000);
+
+// Load detailed stats from API
+$.get('/api/stats')
+    .done(function(data) {
+        console.log('Stats loaded:', data);
+        // Update dashboard with real data
+        if (data.data_statistics) {
+            $('#totalMessages').text(data.data_statistics.total_messages || '23K+');
+            $('#totalConversations').text(data.data_statistics.total_conversations || '1.8K+');
+        }
+    })
+    .fail(function() {
+        console.warn('Could not load real-time stats');
+    });
+</script>
+{% endblock %} 

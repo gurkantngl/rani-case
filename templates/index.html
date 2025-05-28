@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+
+{% block title %}Rani AI Müşteri Hizmetleri - Ana Sayfa{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Hero Section -->
+    <div class="col-12 mb-4">
+        <div class="card bg-gradient text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="card-body text-center py-5">
+                <i class="fas fa-robot fa-4x mb-4"></i>
+                <h1 class="display-4 fw-bold mb-3">Rani AI Müşteri Hizmetleri</h1>
+                <p class="lead mb-4">
+                    Yapay zeka destekli müşteri hizmetleri sistemi ile 7/24 destek
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <span class="badge bg-success fs-6 px-3 py-2">
+                        <i class="fas fa-brain"></i> RAG Sistemi
+                    </span>
+                    <span class="badge bg-info fs-6 px-3 py-2">
+                        <i class="fas fa-cogs"></i> Prompt Engineering
+                    </span>
+                    <span class="badge bg-warning fs-6 px-3 py-2">
+                        <i class="fas fa-rocket"></i> Fine-Tuning Ready
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-comments fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">💬 Canlı Chat</h5>
+                <p class="card-text">
+                    AI destekli sohbet arayüzü ile gerçek zamanlı müşteri desteği test edin.
+                </p>
+                <a href="/chat" class="btn btn-primary">
+                    <i class="fas fa-comment-dots"></i> Chat'e Başla
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                <h5 class="card-title">📊 Analiz Dashboard</h5>
+                <p class="card-text">
+                    Model performansı, veri istatistikleri ve sistem metrikleri.
+                </p>
+                <a href="/dashboard" class="btn btn-success">
+                    <i class="fas fa-chart-bar"></i> Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-flask fa-3x text-warning mb-3"></i>
+                <h5 class="card-title">🧪 Model Testi</h5>
+                <p class="card-text">
+                    Farklı AI yaklaşımlarını karşılaştırın ve test edin.
+                </p>
+                <a href="/test" class="btn btn-warning">
+                    <i class="fas fa-vial"></i> Test Et
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie"></i> Sistem Özellikleri
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-3">
+                        <div class="border-end">
+                            <h3 class="text-primary">23K+</h3>
+                            <small class="text-muted">Eğitim Mesajı</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="border-end">
+                            <h3 class="text-success">1.8K+</h3>
+                            <small class="text-muted">Konuşma Verisi</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="border-end">
+                            <h3 class="text-info">5</h3>
+                            <small class="text-muted">Senaryo Tipi</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h3 class="text-warning">90%+</h3>
+                        <small class="text-muted">Doğruluk Oranı</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Model Comparison -->
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-balance-scale"></i> Model Karşılaştırması
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Yaklaşım</th>
+                                <th>Doğruluk</th>
+                                <th>Hız</th>
+                                <th>Maliyet</th>
+                                <th>Genel Skor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="badge bg-primary">Prompt Engineering</span>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-success" style="width: 86%">86%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-info" style="width: 100%">100%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-success" style="width: 90%">90%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="badge bg-success fs-6">0.909</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge bg-warning">Fine-Tuning</span>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-success" style="width: 90%">90%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-info" style="width: 100%">100%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-warning" style="width: 70%">70%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="badge bg-success fs-6">0.893</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge bg-info">RAG Sistemi</span>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-warning" style="width: 49%">49%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-info" style="width: 100%">100%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-success" style="width: 85%">85%</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="badge bg-warning fs-6">0.719</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-rocket"></i> Hızlı İşlemler
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        <button class="btn btn-outline-primary w-100" onclick="testQuestion('Siparişim ne zaman gelir?')">
+                            📦 Sipariş Takip
+                        </button>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <button class="btn btn-outline-success w-100" onclick="testQuestion('Ürünü iade etmek istiyorum')">
+                            🔄 İade İşlemi
+                        </button>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <button class="btn btn-outline-info w-100" onclick="testQuestion('Bu ürünün fiyatı nedir?')">
+                            💰 Fiyat Sorgusu
+                        </button>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <button class="btn btn-outline-warning w-100" onclick="testQuestion('Kargo durumunu öğrenebilir miyim?')">
+                            🚚 Kargo Takip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Chat Preview Modal -->
+<div class="modal fade" id="quickTestModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-bolt"></i> Hızlı Test
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="testResult" class="text-center">
+                    <div class="loading"></div>
+                    <p>AI sistemi test ediliyor...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function testQuestion(question) {
+    $('#quickTestModal').modal('show');
+    $('#testResult').html('<div class="loading"></div><p>AI sistemi test ediliyor...</p>');
+    
+    $.ajax({
+        url: '/api/ask',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            message: question,
+            approach: 'prompt'
+        }),
+        success: function(response) {
+            const confidenceClass = response.confidence > 0.7 ? 'high-confidence' : 
+                                  response.confidence > 0.4 ? 'medium-confidence' : 'low-confidence';
+            
+            $('#testResult').html(`
+                <div class="alert alert-success">
+                    <h6><i class="fas fa-question-circle"></i> Soru:</h6>
+                    <p class="mb-2">${question}</p>
+                    
+                    <h6><i class="fas fa-robot"></i> AI Yanıtı:</h6>
+                    <p class="mb-2">${response.answer}</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">
+                            <i class="fas fa-cog"></i> ${response.method}
+                        </small>
+                        <span class="badge ${confidenceClass} confidence-badge">
+                            Güven: ${Math.round(response.confidence * 100)}%
+                        </span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="/chat" class="btn btn-primary">
+                        <i class="fas fa-comments"></i> Tam Chat'e Git
+                    </a>
+                </div>
+            `);
+        },
+        error: function() {
+            $('#testResult').html(`
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Test sırasında bir hata oluştu. Lütfen tekrar deneyin.
+                </div>
+            `);
+        }
+    });
+}
+
+// Auto refresh stats every 30 seconds
+setInterval(function() {
+    // Future implementation for real-time stats
+}, 30000);
+</script>
+{% endblock %} 
